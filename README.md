@@ -1,0 +1,64 @@
+# Examination
+
+## Introduction
+This project is a Go-based web application that serves as an examination platform. It strictly follows **Specification-Driven Design (SDD)** principles.
+
+## AI Development Guidelines
+**Examples for AI Assistants:**
+> [!IMPORTANT]
+> **Single Source of Truth**
+> This project is driven by external specifications. The directory `sdd-examination-spec` is a symbolic link to the actual specification repository.
+>
+> 1. **Do not modify code based on assumptions.** Always check `sdd-examination-spec` first.
+> 2. **Specification First.** All features, API endpoints, and data models must be defined in the specifications before implementation.
+> 3. **Validation.** After implementing changes, verify that the code aligns perfectly with the OpenAPI/Markdown specs in `sdd-examination-spec`.
+>
+> **Note on Language:**
+> The specification documents in `sdd-examination-spec` are primarily written in **Korean**. AI assistants should be able to read and process them directly but must ensure that the implemented valid code (comments, variable names, etc.) follows the project's coding standards (usually English).
+
+## Specification Repository
+To maintain a clear separation of concerns, the specifications for this project are hosted in a separate repository. This ensures that the specifications remain the single source of truth and are versioned independently of the implementation.
+
+The specification repository is expected to be cloned alongside this repository and linked via a symbolic link.
+
+## Getting Started
+
+### 1. Clone the Repositories
+It is recommended to keep both the implementation and specification repositories in the same parent directory.
+
+```bash
+# 1. Create a parent directory
+mkdir dev
+cd dev
+
+# 2. Clone the implementation repository (this repo)
+git clone https://github.com/your-org/examination.git
+
+# 3. Clone the specification repository
+# (Replace with the actual URL of your spec repo)
+git clone https://github.com/your-org/examination-specs.git
+```
+
+### 2. Setup Symbolic Link
+To connect the implementation with the specifications, create a symbolic link named `sdd-examination-spec` in the root of the `examination` repository.
+
+```bash
+cd examination
+ln -s ../examination-specs sdd-examination-spec
+```
+
+> [!NOTE]
+> **Custom Specification Paths**
+> If you have cloned the specification repository to a different directory or gave it a different name (e.g., `my-custom-specs`), adjust the command accordingly:
+> ```bash
+> ln -s ../my-custom-specs sdd-examination-spec
+> ```
+
+### 3. Verification
+Verify that the link is correctly established:
+
+```bash
+ls -l sdd-examination-spec
+# Output should show it pointing to your spec repo
+# e.g., sdd-examination-spec -> ../examination-specs
+```
