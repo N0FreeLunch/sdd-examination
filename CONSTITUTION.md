@@ -14,9 +14,14 @@ This document defines the **absolute rules** that govern the development and mai
 2.  **Single Source of Truth**: When ambiguity arises in the code, the Specification is the final authority. Do not change the code to fit assumptions; verify the Spec first.
 3.  **Verification**: Code changes must be verified against the rules defined in the Specification.
 
-## Article III. AI Assistant Guidelines
+## Article III. Data Privacy & Security
+1.  **No Database Commits**: Production or local development tokens, secrets, and **database files** (*.db, *.sqlite, etc.) must **NEVER** be committed to the repository.
+2.  **Ignored Data**: The `data/` directory is reserved for local persistence and must remain in `.gitignore`.
+
+## Article IV. AI Assistant Guidelines
 1.  **Read-Only Specs**: AI assistants may read `sdd-examination-spec` to understand requirements but must **never** attempt to modify files within that directory unless explicitly instructed to update the *Specification Repository* itself.
 2.  **Cross-Language Implementation**: While specifications may be written in Korean (or other languages), the implementation code (variables, comments, commit messages) must be written in **English**.
+3.  **Sensitive Content Verification**: Before creating or editing files likely to contain secrets (e.g., config files, `.env`, test data), AI assistants MUST pause and explicitly ask the USER for review to ensure no actual secret keys are being hardcoded or committed.
 
 ## Article IV. Amendments
 1.  **User Confirmation Required**: Any changes to this **CONSTITUTION.md** file require explicit approval from the USER. AI assistants must not modify this file without a direct request or confirmation.
