@@ -20,7 +20,7 @@ This document defines the **absolute rules** that govern the development and mai
 
 ## Article IV. AI Assistant Guidelines
 1.  **Read-Only Specs**: AI assistants may read `sdd-examination-spec` to understand requirements but must **never** attempt to modify files within that directory unless explicitly instructed to update the *Specification Repository* itself.
-2.  **Cross-Language Implementation**: While specifications may be written in Korean (or other languages), the implementation code (variables, comments, commit messages) must be written in **English**.
+2.  **Cross-Language Implementation**: While specifications may be written in Korean (or other languages), the implementation code (variables, general comments, commit messages) must be written in **English**. However, **Korean (or the specification language) may be used in comments** to explicitly map English code elements to the corresponding terms in the Specification, ensuring accurate reflection of requirements.
 3.  **Sensitive Content Verification**: Before creating or editing files likely to contain secrets (e.g., config files, `.env`, test data), AI assistants MUST pause and explicitly ask the USER for review to ensure no actual secret keys are being hardcoded or committed.
 4.  **Documentation Language**: The `README.md` and other project documentation in this repository must be maintained in **English** to serve as an efficient entry point for AI assistants. This allows AIs to quickly understand the project structure and navigate to the specifications (which may be in other languages) without context switching overhead.
 
