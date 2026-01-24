@@ -100,8 +100,4 @@ Detailed instructions on how to run and verify the application are located in th
 > **Note:** Please refer to the file **`RUNNING.md`** inside the **`sdd-examination-spec/`** directory.
 > (Since this directory is a symbolic link to an external repository, direct links may not work in some viewers.)
 
-**Summary:**
-```bash
-make run
-```
 
