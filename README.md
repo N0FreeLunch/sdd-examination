@@ -93,7 +93,11 @@ echo "sdd-examination-spec" >> .gitignore
 
 ## Running the Application
 
-For detailed instructions on how to run and verify the application, please refer to the [Server Execution Guide](sdd-examination-spec/RUNNING.md) in the specification repository.
+### Server Execution Guide
+Detailed instructions on how to run and verify the application are located in the specification repository.
+
+> **Note:** Please refer to the file **`RUNNING.md`** inside the **`sdd-examination-spec/`** directory.
+> (Since this directory is a symbolic link to an external repository, direct links may not work in some viewers.)
 
 **Summary:**
 ```bash
