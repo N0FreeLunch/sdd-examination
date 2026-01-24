@@ -16,10 +16,26 @@ This project is a Go-based web application that serves as an examination platfor
 > **Note on Language:**
 > The specification documents in `sdd-examination-spec` are primarily written in **Korean**. AI assistants should be able to read and process them directly but must ensure that the implemented valid code (comments, variable names, etc.) follows the project's coding standards (usually English).
 
+## Project Constitution
+> [!IMPORTANT]
+> **Read the Law**: All contributors must read and strictly follow the [Project Constitution](CONSTITUTION.md).
+>
+> **Core Tenet**: The specification folder (`sdd-examination-spec`) is a symbolic link to an external repository. **IT MUST NEVER BE COMMITTED** to this repository. The specifications are the single source of truth.
+
 ## Specification Repository
 To maintain a clear separation of concerns, the specifications for this project are hosted in a separate repository. This ensures that the specifications remain the single source of truth and are versioned independently of the implementation.
 
 The specification repository is expected to be cloned alongside this repository and linked via a symbolic link.
+
+## GitHub Credentials
+Since this project relies on a separate specification repository (`sdd-examination-spec`), your local development environment requires a **Single Shared Token** that grants access to both repositories.
+
+### Token Permissions
+When creating a **Fine-grained Personal Access Token**, ensure you select **both** repositories and grant the following repository permissions:
+-   **Contents**: Read and write
+-   **Pull requests**: Read and write
+-   **Workflows**: Read and write
+-   **Metadata**: Read-only (Required)
 
 ## Getting Started
 
@@ -61,4 +77,15 @@ Verify that the link is correctly established:
 ls -l sdd-examination-spec
 # Output should show it pointing to your spec repo
 # e.g., sdd-examination-spec -> ../examination-specs
+```
+
+### 4. Git Ignore (Crucial)
+To prevent accidental commits of the specification folder (which would duplicate data and break the separation of concerns), you **MUST** add the symlink name to `.gitignore`.
+
+```bash
+# Append the symlink name to .gitignore
+echo "sdd-examination-spec" >> .gitignore
+
+# If you used a custom name, add that as well
+# echo "my-custom-specs" >> .gitignore
 ```
