@@ -14,7 +14,8 @@ This project is a Go-based web application that serves as an examination platfor
 > 3. **Validation.** After implementing changes, verify that the code aligns perfectly with the OpenAPI/Markdown specs in `sdd-examination-spec`.
 >
 > **Note on Language:**
-> The specification documents in `sdd-examination-spec` are primarily written in **Korean**. AI assistants should be able to read and process them directly but must ensure that the implemented valid code (comments, variable names, etc.) follows the project's coding standards (usually English).
+> *   **Project Documentation**: `README.md` and project-level docs must be in **English**. This serves as the primary entry point for AI context understanding.
+> *   **Specifications**: The documents in `sdd-examination-spec` are primarily in **Korean**. AI assistants should read these for logic and requirements but implement code/comments in English.
 
 ## Project Constitution
 > [!IMPORTANT]
