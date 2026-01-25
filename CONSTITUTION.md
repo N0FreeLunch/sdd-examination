@@ -24,5 +24,7 @@ This document defines the **absolute rules** that govern the development and mai
 3.  **Sensitive Content Verification**: Before creating or editing files likely to contain secrets (e.g., config files, `.env`, test data), AI assistants MUST pause and explicitly ask the USER for review to ensure no actual secret keys are being hardcoded or committed.
 4.  **Documentation Language**: The `README.md` and other project documentation in this repository must be maintained in **English** to serve as an efficient entry point for AI assistants. This allows AIs to quickly understand the project structure and navigate to the specifications (which may be in other languages) without context switching overhead.
 
-## Article IV. Amendments
+5.  **Coding Standards**: All code generation and modification must adhere to the standards defined in `skills.md` located in the `sdd-examination-spec` directory.
+
+## Article V. Amendments
 1.  **User Confirmation Required**: Any changes to this **CONSTITUTION.md** file require explicit approval from the USER. AI assistants must not modify this file without a direct request or confirmation.
