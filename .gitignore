@@ -85,3 +85,12 @@ Thumbs.db
 ehthumbs.db
 Desktop.ini
 $RECYCLE.BIN/
+
+# ------------------------------------------------------------------------------
+# 6. Terraform
+# ------------------------------------------------------------------------------
+.terraform/
+*.tfstate
+*.tfstate.backup
+*.tfplan
+*.tfvars
