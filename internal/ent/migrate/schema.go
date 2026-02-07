@@ -194,7 +194,7 @@ var (
 		{Name: "year", Type: field.TypeInt, Nullable: true},
 		{Name: "round", Type: field.TypeInt, Nullable: true},
 		{Name: "category", Type: field.TypeString, Nullable: true},
-		{Name: "operator", Type: field.TypeEnum, Enums: []string{"GT", "GTE", "LT", "LTE", "EQ", "NEQ"}},
+		{Name: "operator", Type: field.TypeEnum, Enums: []string{"Greater", "GreaterEqual", "Less", "LessEqual", "Equal", "NotEqual"}},
 		{Name: "status", Type: field.TypeEnum, Enums: []string{"ACTIVE", "DEPRECATED"}, Default: "ACTIVE"},
 		{Name: "exam_id", Type: field.TypeInt},
 		{Name: "problem_id", Type: field.TypeInt, Nullable: true},

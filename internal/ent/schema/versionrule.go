@@ -17,7 +17,7 @@ func (VersionRule) Fields() []ent.Field {
 		field.Int("year").Optional().Nillable(),
 		field.Int("round").Optional().Nillable(),
 		field.String("category").Optional().Nillable(),
-		field.Enum("operator").Values("GT", "GTE", "LT", "LTE", "EQ", "NEQ"),
+		field.Enum("operator").Values("Greater", "GreaterEqual", "Less", "LessEqual", "Equal", "NotEqual"),
 		field.Enum("status").Values("ACTIVE", "DEPRECATED").Default("ACTIVE"),
 		field.Int("exam_id"),
 		field.Int("problem_id").Optional().Nillable(),

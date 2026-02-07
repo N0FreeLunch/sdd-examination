@@ -77,12 +77,12 @@ type Operator string
 
 // Operator values.
 const (
-	OperatorGT  Operator = "GT"
-	OperatorGTE Operator = "GTE"
-	OperatorLT  Operator = "LT"
-	OperatorLTE Operator = "LTE"
-	OperatorEQ  Operator = "EQ"
-	OperatorNEQ Operator = "NEQ"
+	OperatorGreater      Operator = "Greater"
+	OperatorGreaterEqual Operator = "GreaterEqual"
+	OperatorLess         Operator = "Less"
+	OperatorLessEqual    Operator = "LessEqual"
+	OperatorEqual        Operator = "Equal"
+	OperatorNotEqual     Operator = "NotEqual"
 )
 
 func (o Operator) String() string {
@@ -92,7 +92,7 @@ func (o Operator) String() string {
 // OperatorValidator is a validator for the "operator" field enum values. It is called by the builders before save.
 func OperatorValidator(o Operator) error {
 	switch o {
-	case OperatorGT, OperatorGTE, OperatorLT, OperatorLTE, OperatorEQ, OperatorNEQ:
+	case OperatorGreater, OperatorGreaterEqual, OperatorLess, OperatorLessEqual, OperatorEqual, OperatorNotEqual:
 		return nil
 	default:
 		return fmt.Errorf("versionrule: invalid enum value for operator field: %q", o)
