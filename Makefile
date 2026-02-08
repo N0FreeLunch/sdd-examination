@@ -1,9 +1,8 @@
 .PHONY: generate run
 
 generate:
-	@mkdir -p internal/types internal/api
-	go run github.com/oapi-codegen/oapi-codegen/v2/cmd/oapi-codegen -config oapi-codegen-types.yaml api/types.yaml
-	go run github.com/oapi-codegen/oapi-codegen/v2/cmd/oapi-codegen -config oapi-codegen-server.yaml api/openapi.yaml
+	@echo "Generators removed as we are moving to SSR/HTMX"
+	go mod tidy
 	go mod tidy
 
 run:

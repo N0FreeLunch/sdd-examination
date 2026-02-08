@@ -2,8 +2,6 @@ package main
 
 import (
 	"database/sql"
-	"examination/internal/api"
-	"examination/internal/service"
 	"fmt"
 	"log"
 	"net/http"
@@ -45,10 +43,14 @@ func main() {
 		w.Write([]byte("OK"))
 	})
 
-	svc := service.NewServer()
-	apiHandler := api.NewStrictHandler(svc, nil)
+	// 4. Mount Domain Handlers
+	// TODO: Mount feature-specific handlers (e.g., auth, content) here.
+	r.Get("/", func(w http.ResponseWriter, r *http.Request) {
+		w.Write([]byte("Examination Service - SSR/HTMX Mode"))
+	})
 
-	api.HandlerFromMux(apiHandler, r)
+	// Service integration will be re-added when we implement actual features
+	// svc := service.NewServer()
 
 	log.Println("Server starting on :8080")
 	if err := http.ListenAndServe(":8080", r); err != nil {
