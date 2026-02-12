@@ -48,7 +48,7 @@ services:
 
   adminer:
     container_name: examination-adminer
-    image: adminer:latest
+    image: adminer:standalone
     ports:
       - "8181:8080"
     volumes:

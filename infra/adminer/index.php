@@ -1,4 +1,12 @@
 <?php
+use Adminer\Adminer;
+
+if (basename($_SERVER['DOCUMENT_URI'] ?? $_SERVER['REQUEST_URI']) === 'adminer.css' && is_readable('adminer.css')) {
+    header('Content-Type: text/css');
+    readfile('adminer.css');
+    exit;
+}
+
 // Enable login without password for SQLite
 function adminer_object()
 {
@@ -14,21 +22,21 @@ function adminer_object()
         {
             // Auto-fill the login form (but don't auto-submit)
             ?>
-            <table cellspacing="0" class="layout">
-                <tr>
-                    <th>
-                        <?php echo lang('System'); ?>
-                    <td>
-                        <input type="hidden" name="auth[driver]" value="sqlite">
-                        SQLite 3
-                <tr>
-                    <th>
-                        <?php echo lang('Database'); ?>
-                    <td>
-                        <input name="auth[db]" value="/data/local.db" autocapitalize="off">
-            </table>
-            <p><input type="submit" value="<?php echo lang('Login'); ?>">
-                <?php
+                        <table cellspacing="0" class="layout">
+                            <tr>
+                                <th>
+                                    System
+                                <td>
+                                    <input type="hidden" name="auth[driver]" value="sqlite">
+                                    SQLite 3
+                            <tr>
+                                <th>
+                                    Database
+                                <td>
+                                    <input name="auth[db]" value="/data/local.db" autocapitalize="off">
+                        </table>
+                        <p><input type="submit" value="Login">
+                            <?php
         }
     }
 
