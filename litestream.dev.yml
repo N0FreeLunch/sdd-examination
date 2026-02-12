@@ -1,0 +1,9 @@
+dbs:
+  - path: /data/local.db
+    replicas:
+      - type: s3
+        bucket: backups
+        endpoint: http://minio:9000
+        force-path-style: true
+        access-key-id: ${LITESTREAM_ACCESS_KEY_ID}
+        secret-access-key: ${LITESTREAM_SECRET_ACCESS_KEY}

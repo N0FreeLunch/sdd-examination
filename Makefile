@@ -1,9 +1,24 @@
-.PHONY: generate run
+.PHONY: seed-admin up down logs shell
 
-generate:
-	@echo "Generators removed as we are moving to SSR/HTMX"
-	go mod tidy
-	go mod tidy
 
-run:
-	go run cmd/server/main.go
+# Data Seeding
+seed-admin:
+	@echo "Seeding admin user..."
+	@docker exec -it examination-app-local go run cmd/seeder/main.go
+
+seed-exam-preview:
+	@echo "Seeding exam preview data..."
+	@docker exec -it examination-app-local go run cmd/seeder/main.go -seed=exam_preview -clean
+
+# Docker Compose Helpers
+up:
+	docker-compose up -d
+
+down:
+	docker-compose down
+
+logs:
+	docker-compose logs -f app
+
+shell:
+	docker exec -it examination-app-local /bin/sh
