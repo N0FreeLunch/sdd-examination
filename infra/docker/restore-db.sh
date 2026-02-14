@@ -9,10 +9,8 @@ else
     echo "⚠️ Database not found at $DB_PATH."
     echo "🔄 Attempting to restore from MinIO..."
     
-    litestream databases -config /etc/litestream.yml
-    
-    # Removed -if-replica-exists (for debugging purposes)
-    litestream restore -config /etc/litestream.yml "$DB_PATH"
+    # -if-replica-exists: proceed without error if backup doesn't exist (handle initial run)
+    litestream restore -config /etc/litestream.yml -if-replica-exists "$DB_PATH"
     
     echo "✅ Restore process completed."
 fi

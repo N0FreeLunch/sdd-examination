@@ -18,7 +18,7 @@ services:
       - ADMIN_PASSWORD=admin
     volumes:
       - ./:/app
-      - ./data:/data # Shared DB volume
+      - sqlite-data:/data # Named volume for DB
       - go-modules:/go/pkg/mod # Module caching
     depends_on:
       mailpit:
@@ -34,7 +34,7 @@ services:
     image: litestream/litestream:latest
     command: replicate -config /etc/litestream.yml
     volumes:
-      - ./data:/data # Shared DB volume
+      - sqlite-data:/data
       - ./infra/config/litestream.local.yml:/etc/litestream.yml
     environment:
       - LITESTREAM_ACCESS_KEY_ID=minioadmin
@@ -59,7 +59,7 @@ services:
     ports:
       - "8181:8080"
     volumes:
-      - ./data:/data
+      - sqlite-data:/data
       - ./infra/adminer/index.php:/var/www/html/index.php
     environment:
       - ADMINER_DEFAULT_SERVER=sqlite
@@ -95,7 +95,7 @@ services:
     container_name: examination-db-restore
     entrypoint: /scripts/restore-db.sh
     volumes:
-      - ./data:/data
+      - sqlite-data:/data
       - ./infra/config/litestream.local.yml:/etc/litestream.yml
       - ./infra/docker/restore-db.sh:/scripts/restore-db.sh:ro
     environment:
@@ -108,3 +108,4 @@ services:
 volumes:
   go-modules:
   minio-data:
+  sqlite-data:
